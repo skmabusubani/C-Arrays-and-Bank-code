@@ -1,0 +1,88 @@
+using System;
+public class Array{
+    public static void Main(){
+        Console.WriteLine("Single Array");
+        int s=Convert.ToInt32(Console.ReadLine());
+        Array ex=new Array();
+        ex.P1(s);
+        Console.WriteLine("Two Diamentional Array");
+        int r=Convert.ToInt32(Console.ReadLine());
+        int c=Convert.ToInt32(Console.ReadLine());
+        ex.P2(r,c);
+        Console.WriteLine("Jaggad Array");
+        int x=Convert.ToInt32(Console.ReadLine());
+        ex.P3(x);
+        Console.WriteLine("Array Resize");
+        int v=Convert.ToInt32(Console.ReadLine());
+        ex.Res(v);
+    }
+    public void P1(int s){
+        int[] A=new int[s];
+        for(int i=0;i<s;i++){
+            A[i]=Convert.ToInt32(Console.ReadLine());
+        }
+        Console.Write("Single Array:");
+        for(int i=0;i<s;i++){
+            Console.Write(A[i]+" ");
+        }
+        Console.Write("\n");
+        Console.WriteLine("----End----");
+    }
+    public void P2(int r, int c){
+        int[,] B=new int[r,c];
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                B[i,j]=Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        Console.Write("Two Daimentional Array:\n");
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                Console.Write(B[i,j]+" ");
+            }
+            Console.Write("\n");
+        }
+        Console.WriteLine("----End----");
+    }
+    public void P3(int x){
+        int[][] C=new int[x][];
+        Console.WriteLine("Number of columns");
+        for(int i=0;i<x;i++){
+            int size=Convert.ToInt32(Console.ReadLine());
+            C[i]=new int[size];
+        }
+        
+        for(int i=0;i<C.Length;i++){
+            for(int j=0;j<C[i].Length;j++){
+                C[i][j]=Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        Console.Write("Jaggad Array:\n");
+        for(int i=0;i<C.Length;i++){
+            for(int j=0;j<C[i].Length;j++){
+                Console.Write(C[i][j]+" ");
+            }
+            Console.WriteLine("\n");
+        }
+        Console.WriteLine("----End----");
+    }
+    public void Res(int v){
+        int[] D=new int[v];
+        for(int i=0;i<v;i++){
+            D[i]=Convert.ToInt32(Console.ReadLine());
+        }
+        for(int i=0;i<v;i++){
+            Console.Write(D[i]+" ");
+        }
+        Console.Write("\n");
+        Console.WriteLine("Enter New Size of Array");
+        int N=Convert.ToInt32(Console.ReadLine());
+        System.Array.Resize(ref D,N);
+        Console.WriteLine("--New Array--");
+        for(int i=0;i<N;i++){
+            Console.Write(D[i]+" ");
+        }
+        Console.Write("\n");
+        Console.WriteLine("----End----");
+    }
+}

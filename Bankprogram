@@ -1,0 +1,57 @@
+using System;
+class Bank{
+    public static void Main(){
+        string username=null,password=null;
+        int o=0;
+        Console.WriteLine("**WELCOME TO SUBANI BANK**");
+        Console.WriteLine("Enter User name:");
+        username=Console.ReadLine();
+        if(username!=null){
+            Console.WriteLine("Enter password");
+            password=Console.ReadLine();
+        }
+        do{
+        if(username=="sms" && password=="SMS"){
+            Console.WriteLine("::Click one option from below:: ");
+            Console.WriteLine("1.Check Balane");
+            Console.WriteLine("2.Check Account details");
+            Console.WriteLine("3.ATM Issue");
+            Console.WriteLine("4.Online frude Issue");
+            Console.WriteLine("0.exit");
+            Console.Write("Enter your option:");
+            Console.Write("\n");
+            o=Convert.ToInt32(Console.ReadLine());
+        }
+        switch(o){
+            case 1:Checkbalance();break;
+            case 2:CheckAcc();break;
+            case 3:Atm();break;
+            case 4:Online();break;
+            case 0: break;
+        }
+        } while(o!=0);
+        static void Checkbalance(){
+            Console.WriteLine("Your Balance is :RS.0.00");
+            Console.WriteLine("----other quareys click below------");
+            Console.WriteLine("\n");
+        }
+        static void CheckAcc(){
+            Console.WriteLine("username:subani");
+            Console.WriteLine("password:SMS");
+            Console.WriteLine("----other quareys click below------");
+            Console.WriteLine("\n");
+        }
+        void Atm(){
+            Console.WriteLine("Contact: 000 000 000 000");
+            Console.WriteLine("----other quareys click below------");
+            Console.WriteLine("\n");
+        }
+        void Online(){
+            Console.WriteLine("Contact: *** *** *** ***");
+            Console.WriteLine("----other quareys click below------");
+            Console.WriteLine("\n");
+        }
+        
+        
+    }
+}
